@@ -20,10 +20,23 @@
   background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
 }
 
-.form 
+.input
+{
+    font-size: 2vh;
+}
+
+.output
+{
+    font-size: 3vh;
+    
+}
+
+.display 
 {
     width: 100%;
-    height: 14.28vh;
+    height: 7.14vh;
     background-color: #d1d1e0;
-    font-size: 3vw;
+    text-align: right;
+    padding-right: 2%;
+    padding-top: 2%;
 }
