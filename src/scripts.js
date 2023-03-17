@@ -5,6 +5,7 @@ const input = document.querySelector('.input');
 
 let result = "";
 let current_entry = "";
+let last_operator = "";
 
 for (let key of keys) {
 	const value = key.dataset.key;
@@ -13,8 +14,10 @@ for (let key of keys) {
 
         current_entry += value;
 
-        input.innerHTML = result;
-        output.innerHTML = current_entry;
+        var expression = result + last_operator;
+
+        input.value = expression;
+        output.value = current_entry;
     })
 }
 
@@ -33,9 +36,30 @@ for (let operator of operators) {
         
         if(value == "+")
         {
-            var suma = resultINT + current_entryINT;
+            var sum = resultINT + current_entryINT;
 
-            result = suma;
+            result = sum;
+        }
+
+        if(value == "*")
+        {
+            var multiplication = resultINT * current_entryINT;
+
+            result = multiplication;
+        }
+
+        if(value == "/")
+        {
+            var dividing = resultINT / current_entryINT;
+
+            result = dividing;
+        }
+
+        if(value == "-")
+        {
+            var substract = resultINT - current_entryINT;
+
+            result = substract;
         }
 
         if(value == "C")
@@ -49,8 +73,12 @@ for (let operator of operators) {
         }
 
         current_entry = "";
+        
+        last_operator = value;
 
-        input.innerHTML = result;
-        output.innerHTML = current_entryINT;
+        var expression = result + last_operator;
+
+        input.value = expression;
+        output.value = current_entry;
     })
 }
