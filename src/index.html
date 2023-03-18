@@ -12,9 +12,11 @@
 
         <!-- <input id="output" style="pointer-events:none;" class="form" type="text" name="display" readonly> -->
 
-        <div>
-            <div class="display input"></div>
-            <div class="display output"></div>
+        <div> 
+            <!-- <div style="background-color:green;" class="display input"></div>  -->
+            <!-- <div style="background-color:yellow;"  class="display output"></div> -->
+            <input id="input" style="pointer-events:none;" class="display input" type="text" name="display" readonly>
+            <input id="output" style="pointer-events:none;" class="display output" type="text" name="display" readonly>
         </div>
         
         <div>
@@ -25,9 +27,9 @@
         <button class="buttons" style="background-color:#b32400" type="button"> Backspace </button>
 
         <button class="buttons" type="button"> 1/x </button>
-        <button class="buttons" type="button"> x^2 </button>
+        <button data-key="^" class="buttons operators" type="button"> x^2 </button>
         <button class="buttons" type="button"> sqrt(x) </button>
-        <button class="buttons" type="button"> / </button>
+        <button data-key="/" class="buttons operators" type="button"> / </button>
         
         <button data-key="7" class="buttons key" type="button"> 7 </button>
         <button data-key="8" class="buttons key" type="button"> 8 </button>
@@ -37,14 +39,14 @@
         <button data-key="4" class="buttons key" type="button"> 4</button>
         <button data-key="5" class="buttons key" type="button"> 5 </button>
         <button data-key="6" class="buttons key" type="button"> 6</button>
-        <button class="buttons" type="button"> - </button>
+        <button data-key="-" class="buttons operators" type="button"> - </button>
 
         <button data-key="1" class="buttons key" type="button"> 1 </button>
         <button data-key="2" class="buttons key" type="button"> 2 </button>
         <button data-key="3" class="buttons key" type="button"> 3 </button>
         <button data-key="+" class="buttons operators" type="button"> + </button>
 
-        <button class="buttons" type="button"> +/- </button>
+        <button data-key="negation" class="buttons operators" type="button"> +/- </button>
         <button data-key="0" class="buttons key" type="button"> 0 </button>
         <button class="buttons" type="button"> , </button>
         <button data-key="=" class="buttons operators" style="background-color: #002080" type="button"> = </button>

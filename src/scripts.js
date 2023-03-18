@@ -5,6 +5,7 @@ const input = document.querySelector('.input');
 
 let result = "";
 let current_entry = "";
+let last_operator = "";
 
 for (let key of keys) {
 	const value = key.dataset.key;
@@ -13,8 +14,8 @@ for (let key of keys) {
 
         current_entry += value;
 
-        input.innerHTML = result;
-        output.innerHTML = current_entry;
+        input.value = result;
+        output.value = current_entry;
     })
 }
 
@@ -33,24 +34,18 @@ for (let operator of operators) {
         
         if(value == "+")
         {
-            var suma = resultINT + current_entryINT;
+            api.sum(resultINT, current_entryINT).then((sum) => {
+                result = sum;
 
-            result = suma;
+                current_entry = "";
+
+                input.value = result;
+                output.value = current_entry;
+              }).catch((err) => {
+                console.log(err);
+              });
+            
+           //var sum = resultINT + current_entryINT;
         }
-
-        if(value == "C")
-        {
-            result = "";
-        }
-
-        if(value == "CE")
-        {
-            current_entry = "";
-        }
-
-        current_entry = "";
-
-        input.innerHTML = result;
-        output.innerHTML = current_entryINT;
     })
 }
