@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
+const getOperation = require("./NAPI/build/Release/operations");
 
 function createWindow(){
     const win = new BrowserWindow({
@@ -20,10 +21,10 @@ function createWindow(){
 app.whenReady().then(() => {
     createWindow();
   
-    ipcMain.handle('sum', async (event, num1, num2) => {
-      return num1 + num2;
-    });
-  
+    ipcMain.handle('operations', async (event, num1, num2, num3) => {
+        return getOperation(num1,num2,num3);
+      });
+    
  });
   
 app.on('window-all-closed', () => {
