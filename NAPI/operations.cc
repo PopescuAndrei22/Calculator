@@ -28,6 +28,8 @@ int sum(int x, int y, int z){
       return x-y;
   if(z==2)
       return x*y;
+  if(z==3)
+      return x/y;
 
     return 0;
 }

@@ -57,6 +57,11 @@ for (let operator of operators) {
             operatorType = 2;
         }
 
+        if(value == "/")
+        {
+            operatorType = 3;
+        }
+
         currentOperator = value;
 
         var operationType = operatorType;
